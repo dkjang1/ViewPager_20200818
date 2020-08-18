@@ -9,6 +9,17 @@ import com.kakao.fragments.PhoneNumFragment
 
 class MainViewPagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
 
+    override fun getPageTitle(position: Int): CharSequence? {
+        if (position == 0) {
+            return "이름"
+        } else if (position == 1) {
+            return "휴대폰번호"
+        } else {
+            return "거주지"
+        }
+//        return super.getPageTitle(position)
+    }
+
     override fun getItem(position: Int): Fragment {
         if (position == 0) {
             return NameFragment()
